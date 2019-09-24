@@ -1,0 +1,11 @@
+.div_fundo{
+	background: url("/static/images/bg_math2.png");
+}
+
+.div_fundo_interna{
+	background: rgba(200, 200, 200, 0.9);
+	width: 45%;
+	border-radius: 100px;
+	border: 2px solid #212529;
+	margin-top: 5%;
+}
