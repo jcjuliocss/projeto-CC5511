@@ -1,6 +1,5 @@
 body{
-	background-image: url("/static/images/nando2.gif");
-	background-repeat: no;
+	background: rgba(200,200,200,.5);
 }
 
 .div_fundo{
