@@ -18,3 +18,14 @@ body{
 	min-width: 500px;
 	margin-top: 5%;
 }
+
+.login{
+	background: url("/static/images/bg_math2.png");
+}
+
+.form_login{
+	background: rgba(200, 200, 200, 0.9);
+	border-radius: 20px;
+	width: 30%;
+	height: 80%;
+}
