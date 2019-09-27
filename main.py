@@ -15,7 +15,7 @@ def index():
 def cadastro():
 	return render_template("signup.html")
 
-@app.route("/processar_cadastro")
+@app.route("/processar_cadastro", methods=['GET', 'POST'])
 def processar_cadastro():
 	return "teste"
 
