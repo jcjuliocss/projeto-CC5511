@@ -1,1 +1,1 @@
-web: python test_flask_heroku.py
+web: python main.py
