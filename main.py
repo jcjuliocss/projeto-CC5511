@@ -17,7 +17,7 @@ def cadastro():
 
 @app.route("/processar_cadastro")
 def processar_cadastro():
-	return "<script>alert(" + request.form['nome'] + ")</script>"
+	return request.form
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
