@@ -7,12 +7,15 @@
     <title>Inicio</title>
 </head>
 <body class="text-center login">
+    {% if alerta %}
+        <script>alert("{{ msg }}");</script>
+    {% endif %}
     <div class="form_login">
-        <form class="form-signin" action="/index">
+        <form class="form-signin" action="/processar_login" method="post">
             <img class="mb-4" src="/static/images/login_img.png" width="100" height="120">
             <h1 class="h3 mb-3 font-weight-normal">Entre ou cadastre-se</h1>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+            <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Senha" required="">
             <button class="btn btn-lg btn-primary btn-block bg-dark" type="submit">Entrar</button>
             <a href="/cadastro" class="btn btn-lg btn-primary btn-block bg-dark">Cadastrar</a>
         </form>

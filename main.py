@@ -9,9 +9,9 @@ usuarios_senhas = []
 
 
 @app.route("/")
-def login():
+def login(alerta=False, msg=''):
     """Pagina de login."""
-    return render_template('login.html')
+    return render_template('login.html', alerta=alerta, msg=msg)
 
 
 @app.route("/index")
@@ -32,10 +32,26 @@ def processar_cadastro():
     dados = request.form
 
     usuarios_emails.append(dados.get("email"))
-    usuarios_senhas.append(dados.get("senha"))
+    usuarios_senhas.append(str(dados.get("senha")))
 
     return login()
 
+
+@app.route("/processar_login", methods=['GET', 'POST'])
+def processar_login():
+    """Processa dados de login e retorna para a index caso esteja tudo ok."""
+    dados = request.form
+
+    email = dados.get("email")
+    senha = dados.get("senha")
+
+    if email in usuarios_emails and str(senha) in usuarios_senhas:
+        return index()
+    else:
+        msg = 'Email ou senha invalidos'
+        return login(alerta=True, msg=msg)
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
+
 app.run(host='0.0.0.0', port=port)
