@@ -15,6 +15,10 @@ def index():
 def cadastro():
 	return render_template("signup.html")
 
+@app.route("processar_cadastro")
+def processar_cadastro():
+	return "<script>alert(" + request.form.nome + ")</script>"
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
