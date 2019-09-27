@@ -15,7 +15,7 @@ def index():
 def cadastro():
 	return render_template("signup.html")
 
-@app.route("processar_cadastro")
+@app.route("/processar_cadastro")
 def processar_cadastro():
 	return "<script>alert(" + request.form['nome'] + ")</script>"
 
