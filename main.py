@@ -11,7 +11,7 @@ usuarios_senhas = []
 @app.route("/")
 def login(msg=''):
     """Pagina de login."""
-    return render_template('login.html', alerta=alerta, msg=msg)
+    return render_template('login.html', msg=msg)
 
 
 @app.route("/index")
