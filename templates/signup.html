@@ -4,10 +4,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css">
     <link rel="stylesheet" type="text/css" href="/static/css/estilo.css?d=20190926">
-    <title>Inicio</title>
+    <title>Cadastrar</title>
+    <script type="text/javascript">
+        function msg_ok(){
+            alert("Cadastrado com sucesso!")
+        }
+</script>
 </head>
 <body class="text-center login">
-    <div class="form_login">
+    <div class="form_login" onsubmit="msg_ok()">
         <form class="form-signin" action="/processar_cadastro" method="post">
             <h1 class="h3 mb-3 font-weight-normal">Cadastro</h1><br>
             <input type="text" name="nome" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Nome" required="" autofocus=""><br>

@@ -26,7 +26,7 @@ def cadastro():
     return render_template("signup.html")
 
 
-@app.route("/processar_cadastro", methods=['GET', 'POST'])
+@app.route("/processar_cadastro", methods=['POST'])
 def processar_cadastro():
     """Adiciona usuario globalmente."""
     dados = request.form
@@ -37,7 +37,7 @@ def processar_cadastro():
     return login()
 
 
-@app.route("/processar_login", methods=['GET', 'POST'])
+@app.route("/processar_login", methods=['POST'])
 def processar_login():
     """Processa dados de login e retorna para a index caso esteja tudo ok."""
     dados = request.form
