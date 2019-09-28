@@ -9,7 +9,7 @@ usuarios_senhas = []
 
 
 @app.route("/")
-def login(alerta=False, msg=''):
+def login(msg=''):
     """Pagina de login."""
     return render_template('login.html', alerta=alerta, msg=msg)
 
@@ -49,7 +49,7 @@ def processar_login():
         return index()
     else:
         msg = 'Email ou senha invalidos'
-        return login(alerta=True, msg=msg)
+        return login(msg=msg)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
