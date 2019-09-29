@@ -1,0 +1,23 @@
+.navbar.navbar-dark.navbar-expand-lg {
+}
+
+.navbar.navbar-dark.navbar-expand-lg {
+}
+
+.navbar.navbar-dark.navbar-expand-lg.navbar-collapse.collapse.w-100.order-3.dual-collapse2 {
+}
+
+.div_fundo_interna {
+  background: rgba(200, 200, 200, 0.9);
+  width: 45%;
+  border-radius: 100px;
+  border: 2px solid #212529;
+  min-width: 500px;
+  margin-top: 5%;
+}
+
+.header {
+  min-height: 200px;
+  max-height: 250px;
+}
+

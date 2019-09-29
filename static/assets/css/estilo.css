@@ -7,7 +7,7 @@ body{
 }
 
 .div_fundo{
-	background: url("/static/images/bg_math2.png");
+	background: url("/static/assets/images/bg_math2.png");
 }
 
 .div_fundo_interna{
@@ -20,7 +20,7 @@ body{
 }
 
 .login{
-	background: url("/static/images/bg_math2.png");
+	background: url("/static/assets/images/bg_math2.png");
 }
 
 .form_login{

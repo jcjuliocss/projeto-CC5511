@@ -1,5 +1,6 @@
 """."""
 import os
+
 from flask import Flask, render_template, request
 
 app = Flask(__name__, static_url_path='/static')
@@ -35,6 +36,11 @@ def processar_cadastro():
     usuarios_senhas.append(str(dados.get("senha")))
 
     return login()
+
+
+@app.route("/exercicios")
+def exercicios():
+    return render_template("exercicios.html")
 
 
 @app.route("/processar_login", methods=['POST'])
