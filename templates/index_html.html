@@ -15,12 +15,18 @@
 </head>
 
 <body style="background-color: rgba(200,200,200,0.5);height: 133px;min-height: 242px;"><div class="header">
+    {% if msg %}
+        <script>alert("{{ msg.decode('utf-8') }}");</script>
+    {% endif %}
     <nav class="navbar navbar-dark navbar-expand-md bg-dark fixed-top">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><a href="#" class="nav-link text-white">Início</a></li>
-    </ul>
-    <a class="nav-link text-info" href="/inicio_exercicios">Exercícios</a>
-    <a class="nav-link text-info" href="#">Calculadora</a></nav>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a href="#" class="nav-link text-white">Início</a></li>
+        </ul>
+        <a class="nav-link text-info" href="/inicio_exercicios">Exercícios</a>
+        <a class="nav-link text-info" style="cursor: pointer;" onclick="javascript: confirm('Deseja sair?') ? window.location.assign('/') : false">
+            Sair
+        </a>
+    </nav>
     <main role="main">
         <div class="jumbotron" style="background: url(static/assets/img/bg_math2.png);">
             <div class="container div_fundo_interna">

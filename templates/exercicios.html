@@ -15,32 +15,35 @@
     <link rel="stylesheet" href="static/assets/css/styles.css">
 </head>
 
-<body style="background-color: rgba(200,200,200,0.5);"><nav class="navbar navbar-dark navbar-expand-md bg-dark fixed-top">
-<ul class="navbar-nav mr-auto">
-    <li class="nav-item active"><a href="/index" class="nav-link text-white">Início</a></li>
-</ul>
-    <a class="nav-link text-info" href="#">Exercícios</a>
-    <a class="nav-link text-info" href="#">Calculadora</a></nav>
+<body style="background-color: rgba(200,200,200,0.5);">
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark fixed-top">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a href="/index" class="nav-link text-white">Início</a></li>
+        </ul>
+        <a class="nav-link text-info" href="#">Exercícios</a>
+        <a class="nav-link text-info" style="cursor: pointer;" onclick="javascript: confirm('Deseja sair?') ? window.location.assign('/') : false">Sair</a>
+    </nav>
     <div class="container text-center text-dark shadow" style="background-color: #d6d6d6;margin-top: 80px;height: 400px;">
         <div class="row" style="margin-top: 46px;">
             <div class="col" style="margin-top: 74px;">
-                <p class="text-justify">{{ num + 1 }}{{ ': ' + pergunta }}</p>
+                <p class="text-justify">{{ num + 1 }}{{ ': ' + pergunta[num]['pergunta'].decode('utf-8') }}</p>
             </div>
         </div>
         <form action="/exercicios" method="post">
             <center>
-                1: <input type="radio" name="resposta"/><span>{{ respostas["1"] }}</span><br>
-                2: <input type="radio" name="resposta"/><span>{{ respostas["2"] }}</span><br>
-                3: <input type="radio" name="resposta"/><span>{{ respostas["3"] }}</span><br>
-                4: <input type="radio" name="resposta"/><span>{{ respostas["4"] }}</span><br>
+                1: <input type="radio" value="1" name="resposta" required/><span>{{ pergunta[num]['resposta_2'].decode('utf-8') }}</span><br>
+                2: <input type="radio" value="2" name="resposta" required/><span>{{ pergunta[num]['resposta_1'].decode('utf-8') }}</span><br>
+                3: <input type="radio" value="3" name="resposta" required/><span>{{ pergunta[num]['resposta_3'].decode('utf-8') }}</span><br>
+                4: <input type="radio" value="4" name="resposta" required/><span>{{ pergunta[num]['resposta_4'].decode('utf-8') }}</span><br>
             </center>
             <input type="hidden" name="num" value="{{ num + 1 }}">
+            <input type="hidden" name="acertos" value="{{ acertos }}">
             <div class="btn-group border rounded-circle" role="group" style="margin-top: 28px;">
                 <button class="btn btn-primary bg-dark border-dark shadow-sm" type="button" style="margin-right: 8px;margin-top: 0px;width: 84.2813px;" onclick="javascript: confirm('O progresso será perdido. Deseja realmente voltar?') ? window.location.assign('/index') : false">Voltar</button>
                 {% if num < 8 %}
                     <button class="btn btn-primary bg-dark border-dark shadow-sm" type="submit" style="margin-top: 0px;">Proxímo</button>
                 {% else %}
-                    <button class="btn btn-primary bg-dark border-dark shadow-sm" type="button" style="margin-top: 0px;" onclick="javascript: alert('Parabéns! Você concluiu todos os exercícios!'); window.location.assign('/index');">Concluir</button>
+                    <button class="btn btn-primary bg-dark border-dark shadow-sm" type="submit" style="margin-top: 0px;">Concluir</button>
                 {% endif %}
             </div>
         </form>
