@@ -11,13 +11,14 @@ class DB:
 
     def conection(self):
         """."""
+        p = 'ec295620870456a69cedc3a43ab9ffa244511e0033af2587df7f363d318e509c'
         conn = \
-            psycopg2.connect(user="xqcfpjqsanbhpa",
-                             password="ec295620870456a69cedc3a43ab9ffa2\
-                                      44511e0033af2587df7f363d318e509c",
-                             host="ec2-107-22-239-155.compute-1.amazonaws.com",
-                             port="5432",
-                             database="d9755uu1fjnkn3")
+            psycopg2.connect(
+                user="xqcfpjqsanbhpa",
+                password=p,
+                host="ec2-107-22-239-155.compute-1.amazonaws.com",
+                port="5432",
+                database="d9755uu1fjnkn3")
 
         return conn
 
