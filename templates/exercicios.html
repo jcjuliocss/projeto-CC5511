@@ -31,10 +31,10 @@
         </div>
         <form action="/exercicios" method="post">
             <center>
-                1: <input type="radio" value="1" name="resposta" required/><span>{{ pergunta[num]['resposta_2'].decode('utf-8') }}</span><br>
-                2: <input type="radio" value="2" name="resposta" required/><span>{{ pergunta[num]['resposta_1'].decode('utf-8') }}</span><br>
-                3: <input type="radio" value="3" name="resposta" required/><span>{{ pergunta[num]['resposta_3'].decode('utf-8') }}</span><br>
-                4: <input type="radio" value="4" name="resposta" required/><span>{{ pergunta[num]['resposta_4'].decode('utf-8') }}</span><br>
+                1: <input type="radio" value="1" name="resposta" required/><span>{{ pergunta[num]['resposta_2'] }}</span><br>
+                2: <input type="radio" value="2" name="resposta" required/><span>{{ pergunta[num]['resposta_1'] }}</span><br>
+                3: <input type="radio" value="3" name="resposta" required/><span>{{ pergunta[num]['resposta_3'] }}</span><br>
+                4: <input type="radio" value="4" name="resposta" required/><span>{{ pergunta[num]['resposta_4'] }}</span><br>
             </center>
             <input type="hidden" name="num" value="{{ num + 1 }}">
             <input type="hidden" name="acertos" value="{{ acertos }}">
