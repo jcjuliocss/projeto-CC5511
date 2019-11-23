@@ -26,7 +26,7 @@
     <div class="container text-center text-dark shadow" style="background-color: #d6d6d6;margin-top: 80px;height: 400px;">
         <div class="row" style="margin-top: 46px;">
             <div class="col" style="margin-top: 74px;">
-                <p class="text-justify">{{ num + 1 }}{{ ': ' + pergunta[num]['pergunta'].decode('utf-8') }}</p>
+                <p class="text-justify">{{ num + 1 }}{{ ': ' + pergunta[num]['pergunta'] }}</p>
             </div>
         </div>
         <form action="/exercicios" method="post">
