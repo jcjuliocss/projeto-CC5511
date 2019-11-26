@@ -39,7 +39,6 @@
             <input type="hidden" name="num" value="{{ num + 1 }}">
             <input type="hidden" name="acertos" value="{{ acertos }}">
             <div class="btn-group border rounded-circle" role="group" style="margin-top: 28px;">
-                <button class="btn btn-primary bg-dark border-dark shadow-sm" type="button" style="margin-right: 8px;margin-top: 0px;width: 84.2813px;" onclick="javascript: confirm('O progresso será perdido. Deseja realmente voltar?') ? window.location.assign('/index') : false">Voltar</button>
                 {% if num < 8 %}
                     <button class="btn btn-primary bg-dark border-dark shadow-sm" type="submit" style="margin-top: 0px;">Proxímo</button>
                 {% else %}
